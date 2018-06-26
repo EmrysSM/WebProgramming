@@ -22,6 +22,11 @@
             return $result;
         }
 
+        if (isBitten()) {
+            echo "Charlie ate my lunch!";
+        } else {
+            echo "Charlie did not eat my lunch!";
+        }
     ?>
 </body>
 </html>
