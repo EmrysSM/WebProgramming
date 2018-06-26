@@ -23,10 +23,25 @@
         }
 
         if (isBitten()) {
-            echo "Charlie ate my lunch!";
+            echo "Charlie ate my lunch!\n";
         } else {
-            echo "Charlie did not eat my lunch!";
+            echo "Charlie did not eat my lunch!\n";
         }
+
+        // Part 2
+        echo "<table>\n";
+        for ($i = 0; $i < 7; $i++) {
+            echo "<tr>\n";
+            for ($j = 0; $j < 7; $j++) {
+                if (($j % 2) == 0) {
+                    echo "<td style=\"background-color:red\"></td>\n";
+                } else {
+                    echo "<td style=\"background-color:black\"></td>\n";
+                }
+            }
+            echo "</tr>\n";
+        }
+        echo "</table>\n";
     ?>
 </body>
 </html>
