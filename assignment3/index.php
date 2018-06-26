@@ -6,12 +6,21 @@
 </head>
 <body>
     <?php
-    /**
-     * Assignment 3 for Web Programming
-     * Emrys Scott-Murrell
-     * Date: 6/26/18
-     */
+        /**
+         * Assignment 3 for Web Programming
+         * Emrys Scott-Murrell
+         * Date: 6/26/18
+         */
 
+        // Part 1
+        function isBitten() {
+            $result = True;
+            if (rand(1,2) == 1) {
+                $result = False;
+            }
+
+            return $result;
+        }
 
     ?>
 </body>
