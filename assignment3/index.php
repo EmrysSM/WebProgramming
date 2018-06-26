@@ -73,7 +73,24 @@
         }
         echo "</p>";
 
-        //
+        // Part 3.3
+        $month = array ('January', 'February', 'March', 'April',
+            'May', 'June', 'July', 'August',
+            'September', 'October', 'November', 'December');
+
+        echo "<p>";
+        foreach ($month as $item) {
+            echo "$item ";
+        }
+        echo "</p>";
+
+        echo "<p>";
+        sort($month);
+        foreach ($month as $item) {
+            echo "$item ";
+        }
+        echo "</p>";
+
     ?>
 </body>
 </html>
