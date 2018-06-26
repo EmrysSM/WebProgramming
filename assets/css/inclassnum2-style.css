@@ -1,0 +1,35 @@
+body {
+	margin: 0% 10%;
+	background-image: url(../img/journaltile.png);
+}
+
+#page {
+	border: 10px white solid;
+	background-color: white;
+}
+
+#title {
+	background-color: #A8F0F0;
+	text-align: right;
+}
+
+#toph {
+	font-size: 14pt;
+}
+
+.post {
+	border: 4px #C2E9E9 solid;
+	background-color: #E8FBFB;
+	padding: 5px;
+	margin-top: 10px;
+	overflow: auto;
+
+}
+
+.post img {
+	float: right;
+}
+
+.postdate {
+	border-bottom: 2px blue dashed ;
+}

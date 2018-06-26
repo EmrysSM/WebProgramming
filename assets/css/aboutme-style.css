@@ -1,0 +1,12 @@
+.changecolor {
+	color: red;
+}
+
+.changeprop {
+	font-family: arial;
+	font-size: 60%;
+}
+
+.changebg {
+	background-color: #000;
+}

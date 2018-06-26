@@ -1,0 +1,75 @@
+* {
+	font-family: sans-serif;
+}
+
+body {
+	background-image: url(../img/atlsky.jpg);
+	background-color: #d3d3d3;
+	background-size: cover;
+}
+
+.center {
+	margin: auto;
+}
+
+.icenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tcenter {
+	text-align: center;
+}
+
+.lcenter {
+	display: inline-block;
+	background: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+  width: 60%;
+}
+
+table, td, th { 
+  text-align: center; 
+  border: 0px solid gray;
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+
+a:hover {
+  font-style: italic;
+  color: orange;
+}
+
+#mainbg {
+	background-color: #fff !important;
+	width: 600px;
+	margin: auto;
+	overflow: auto;
+	padding: 20px 50px;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.newleft {
+	clear: both;
+	float: left;
+}

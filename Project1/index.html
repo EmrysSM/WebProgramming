@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Stone Mountain Interactive Hiking Map</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!--these are all of the hidden radio buttons that allow us to toggle elements on the map:-->
+        <input id="cherokee-info" type="radio" name="radio" />
+        <input id="kings-info" type="radio" name="radio" />
+        <input id="muscogee-info" type="radio" name="radio" />
+        <input id="naturegarden-info" type="radio" name="radio" />
+        <input id="songbird-info" type="radio" name="radio" />
+        <input id="walkup-info" type="radio" name="radio" />
+
+        <input id="food-info" type="radio" name="radio" />
+        <input id="bathroom-info" type="radio" name="radio" />
+        <input id="parking-info" type="radio" name="radio" />
+        <input id="lift-info" type="radio" name="radio" />
+        <input id="dino-info" type="radio" name="radio" />
+
+        <!--the label for="" allows us to toggle the different text in the info box below the map by clicking these labels:-->
+        <input type="checkbox" id="cherokee-show" />
+        <label for="cherokee-info" id="cherokee-label">Cherokee Trail</label>
+        <input type="checkbox" id="kings-show" />
+        <label for="kings-info" id="kings-label">King's Trail At Indian Island</label>
+        <input type="checkbox" id="muscogee-show" />
+        <label for="muscogee-info" id="muscogee-label">Trail of the Muscogee</label>
+        <input type="checkbox" id="naturegarden-show" />
+        <label for="naturegarden-info" id="naturegarden-label">Nature Gardens Trail</label>
+        <input type="checkbox" id="songbird-show" />
+        <label for="songbird-info" id="songbird-label">Songbird Habitat Trail</label>
+        <input type="checkbox" id="walkup-show" />
+        <label for="walkup-info" id="walkup-label">Walk-Up Trail</label>
+
+        <input type="checkbox" id="food-show" />
+        <label for="food-info" id="food-label">Food</label>
+        <input type="checkbox" id="bathroom-show" />
+        <label for="bathroom-info" id="bathroom-label">Bathrooms</label>
+        <input type="checkbox" id="parking-show" />
+        <label for="parking-info" id="parking-label">Parking</label>
+        <input type="checkbox" id="lift-show" />
+        <label for="lift-info" id="lift-label">Lift</label>
+        <input type="checkbox" id="dino-show" />
+        <label for="dino-info" id="dino-label">Dinosaur</label>
+
+        <!--here text is toggled between the default invisible and visible when different labels above are clicked-->
+        <div id="info">
+            <span id="difficulty"></span>
+            <br />
+            <span id="length"></span>
+            <br />
+            <span id="description"></span>
+        </div>
+
+        <!--the basemap as well as all of the trails and icons are placed directly on top of each other and toggled
+between content:none and content:block with the checkboxes-->
+        <div id="map">
+            <img id="basemap" src="./images/basemap.png" />
+            <img id="map-cherokee" src="./images/cherokee.png" />
+            <img id="map-kings" src="./images/kings.png" />
+            <img id="map-muscogee" src="./images/muscogee.png" />
+            <img id="map-naturegarden" src="./images/naturegarden.png" />
+            <img id="map-songbird" src="./images/songbird.png" />
+            <img id="map-walkup" src="./images/walkup.png" />
+
+            <img id="map-food" src="./images/food.png" />
+            <img id="map-bathroom" src="./images/bathroom.png" />
+            <img id="map-parking" src="./images/parking.png" />
+            <img id="map-lift" src="./images/lift.png" />
+            <img id="map-dino" src="./images/dino.png" />
+        </div>
+
+    </div>
+
+</body>
+
+</html>

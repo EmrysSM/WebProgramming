@@ -1,0 +1,224 @@
+.container {
+     display: flex;
+     display: -webkit-flex;
+     flex-flow: row wrap;
+    /* causes the #info div to wrap under the map as another row*/
+}
+ .container > #info {
+     flex: 1;
+     -webkit-order: 1;
+     order: 1;
+     text-align: center;
+     font-weight: bold;
+     overflow: hidden;
+     margin-bottom: 0;
+}
+ body {
+     color: #313335;
+     font-family: 'Open Sans', sans-serif;
+     font-size: 14px;
+     margin-top: 0;
+}
+ img {
+     max-width: 100%;
+     height: auto;
+     position: absolute;
+}
+ #basemap{
+     position: relative;
+}
+
+/* all elements with ids ending with "map-" */
+ *[id^='map-']{
+     position: absolute;
+     top: 18px;
+     display: none;
+}
+
+/* all <input> tags with ids ending with "-info" (the hidden radio buttons)*/
+ input[id$="-info"] {
+     display: none;
+}
+
+/* text-shadow effect is applied to each label on click */
+ #cherokee-info:checked ~ #cherokee-label{
+     color: black;
+     text-shadow: 1px 1px #313335;
+}
+ #kings-info:checked ~ #kings-label{
+     color: black;
+     text-shadow: 1px 1px #313335;
+}
+ #muscogee-info:checked ~ #muscogee-label{
+     color: black;
+     text-shadow: 1px 1px #313335;
+}
+ #naturegarden-info:checked ~ #naturegarden-label{
+     color: black;
+     text-shadow: 1px 1px #313335;
+}
+ #songbird-info:checked ~ #songbird-label{
+     color: black;
+     text-shadow: 1px 1px #313335;
+}
+ #walkup-info:checked ~ #walkup-label{
+     color: black;
+     text-shadow: 1px 1px #313335;
+}
+ #food-info:checked ~ #food-label{
+     color: black;
+     text-shadow: 1px 1px #313335;
+}
+ #bathroom-info:checked ~ #bathroom-label{
+     color: black;
+     text-shadow: 1px 1px #313335;
+}
+ #parking-info:checked ~ #parking-label{
+     color: black;
+     text-shadow: 1px 1px #313335;
+}
+ #lift-info:checked ~ #lift-label{
+     color: black;
+     text-shadow: 1px 1px #313335;
+}
+ #dino-info:checked ~ #dino-label{
+     color: black;
+     text-shadow: 1px 1px #313335;
+}
+
+/* toggles the different parts of the map from display:none to display:block*/
+ #cherokee-show:checked ~ #map > #map-cherokee {
+     display:block;
+}
+ #kings-show:checked ~ #map > #map-kings {
+     display:block;
+}
+ #muscogee-show:checked ~ #map > #map-muscogee {
+     display:block;
+}
+ #naturegarden-show:checked ~ #map > #map-naturegarden {
+     display:block;
+}
+ #songbird-show:checked ~ #map > #map-songbird {
+     display:block;
+}
+ #walkup-show:checked ~ #map > #map-walkup {
+     display:block;
+}
+ #food-show:checked ~ #map > #map-food {
+     display:block;
+}
+ #bathroom-show:checked ~ #map > #map-bathroom {
+     display:block;
+}
+ #parking-show:checked ~ #map > #map-parking {
+     display:block;
+}
+ #lift-show:checked ~ #map > #map-lift {
+     display:block;
+}
+ #dino-show:checked ~ #map > #map-dino {
+     display:block;
+}
+ #info{
+     visibility: hidden;
+}
+
+/* toggles the text in #info according to which label is clicked */
+ #cherokee-info:checked ~ #info > #difficulty:after {
+     content: "Difficulty: Advanced";
+     visibility: visible;
+}
+ #cherokee-info:checked ~ #info > #length:after {
+     content: "Length: 5 mile";
+     visibility: visible;
+}
+ #cherokee-info:checked ~ #info > #description:after {
+     content: "Description: Loops around mountain base, passing through and oak-hickory forest, with views of the lake and streams.";
+     visibility: visible;
+}
+ #kings-info:checked ~ #info > #difficulty:after {
+     content: "Difficulty: Beginner";
+     visibility: visible;
+}
+ #kings-info:checked ~ #info > #length:after {
+     content: "Length: 1 mile";
+     visibility: visible;
+}
+ #kings-info:checked ~ #info > #description:after {
+     content: "Description: Parking and picnic benches available on Indian Island. Scenic views of the lake, near Covered Bridge.";
+     visibility: visible;
+}
+ #muscogee-info:checked ~ #info > #difficulty:after {
+     content: "Difficulty: Beginner";
+     visibility: visible;
+}
+ #muscogee-info:checked ~ #info > #length:after {
+     content: "Length: 1.5 miles";
+     visibility: visible;
+}
+ #muscogee-info:checked ~ #info > #description:after {
+     content: "Description: Many twists and curves. Scenic view of the lake.";
+     visibility: visible;
+}
+ #naturegarden-info:checked ~ #info > #difficulty:after {
+     content: "Difficulty: Beginner";
+     visibility: visible;
+}
+ #naturegarden-info:checked ~ #info > #length:after {
+     content: "Length: 3/4 mile";
+     visibility: visible;
+}
+ #naturegarden-info:checked ~ #info > #description:after {
+     content: "Description: A scenic loop through a mature oak-hickory forest. Excellent for viewing shade-loving native plants.";
+     visibility: visible;
+}
+ #songbird-info:checked ~ #info > #difficulty:after {
+     content: "Difficulty: Intermediate";
+     visibility: visible;
+}
+ #songbird-info:checked ~ #info > #length:after {
+     content: "Length: 2 miles";
+     visibility: visible;
+}
+ #songbird-info:checked ~ #info > #description:after {
+     content: "Description: Excellent birding spot. Meadow habitat planted to provide food for songbirds.";
+     visibility: visible;
+}
+ #walkup-info:checked ~ #info > #difficulty:after {
+     content: "Difficulty: Beginner";
+     visibility: visible;
+}
+ #walkup-info:checked ~ #info > #length:after {
+     content: "Length: 1 mile";
+     visibility: visible;
+}
+ #walkup-info:checked ~ #info > #description:after {
+     content: "Description: A scenic loop through a mature oak-hickory forest. Excellent for viewing shade-loving native plants.";
+     visibility: visible;
+}
+ #food-info:checked ~ #info > #length:after {
+     content: "From funnel cakes to barbecue, there's enough to choose from to satisfy any hungry hiker's appetite.";
+     visibility: visible;
+}
+ #food-info:checked ~ #info > #length:after {
+     content: "From funnel cakes to barbecue, there's enough to choose from to satisfy any hungry hiker's appetite.";
+     visibility: visible;
+}
+ #bathroom-info:checked ~ #info > #length:after {
+     content: "Well maintained bathrooms are strategically placed throughout the park for easy access";
+     visibility: visible;
+}
+ #parking-info:checked ~ #info > #length:after {
+     content: "Parking is available near all trails and attractions inside Stone Mountain Park";
+     visibility: visible;
+}
+ #lift-info:checked ~ #info > #length:after {
+     content: "A lift to Stone Mountain's peak, taking you to an elevation of over 825 feet.";
+     visibility: visible;
+}
+ #dino-info:checked ~ #info > #length:after {
+     content: "Fun and educational for the whole family. Be sure to check out the Dinotorium!";
+     visibility: visible;
+}
+ 
