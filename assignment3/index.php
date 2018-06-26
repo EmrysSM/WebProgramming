@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Assignment 3</title>
+    <link href="assignment3.css">
 </head>
 <body>
     <?php
