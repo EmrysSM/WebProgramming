@@ -33,10 +33,18 @@
         for ($i = 0; $i < 7; $i++) {
             echo "<tr>\n";
             for ($j = 0; $j < 7; $j++) {
-                if (($j % 2) == 0) {
-                    echo "<td style=\"background-color:red\"></td>\n";
+                if (($i % 2) == 0) {
+                    if (($j % 2) == 0) {
+                        echo "<td style=\"background-color:red\"></td>\n";
+                    } else {
+                        echo "<td style=\"background-color:black\"></td>\n";
+                    }
                 } else {
-                    echo "<td style=\"background-color:black\"></td>\n";
+                    if (($j % 2) == 0) {
+                        echo "<td style=\"background-color:black\"></td>\n";
+                    } else {
+                        echo "<td style=\"background-color:red\"></td>\n";
+                    }
                 }
             }
             echo "</tr>\n";
