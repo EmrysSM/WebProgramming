@@ -23,11 +23,13 @@
             return $result;
         }
 
+        echo "<p>";
         if (isBitten()) {
             echo "Charlie ate my lunch!\n";
         } else {
             echo "Charlie did not eat my lunch!\n";
         }
+        echo "</p>";
 
         // Part 2
         echo "<table>\n";
@@ -52,15 +54,26 @@
         }
         echo "</table>\n";
 
-        // Part 3
+        // Part 3.1
         $month = array ('January', 'February', 'March', 'April',
             'May', 'June', 'July', 'August',
             'September', 'October', 'November', 'December');
 
+        echo "<p>";
         for ($i = 0; $i < sizeof($month); $i++) {
             echo "$month[$i] ";
         }
-        echo "\n";
+        echo "</p>";
+
+        // Part 3.2
+        echo "<p>";
+        sort($month);
+        for ($i = 0; $i < sizeof($month); $i++) {
+            echo "$month[$i] ";
+        }
+        echo "</p>";
+
+        //
     ?>
 </body>
 </html>
