@@ -51,6 +51,16 @@
             echo "</tr>\n";
         }
         echo "</table>\n";
+
+        // Part 3
+        $month = array ('January', 'February', 'March', 'April',
+            'May', 'June', 'July', 'August',
+            'September', 'October', 'November', 'December');
+
+        for ($i = 0; $i < sizeof($month); $i++) {
+            echo "$month[$i] ";
+        }
+        echo "\n";
     ?>
 </body>
 </html>
