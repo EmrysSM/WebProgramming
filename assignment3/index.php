@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Assignment 3</title>
-    <link href="assignment3.css">
+    <link rel="stylesheet" href="assignment3.css">
 </head>
 <body>
     <?php
@@ -36,15 +36,15 @@
             for ($j = 0; $j < 7; $j++) {
                 if (($i % 2) == 0) {
                     if (($j % 2) == 0) {
-                        echo "<td style=\"background-color:red\"></td>\n";
+                        echo "<td class='red'></td>\n";
                     } else {
-                        echo "<td style=\"background-color:black\"></td>\n";
+                        echo "<td class='black'></td>\n";
                     }
                 } else {
                     if (($j % 2) == 0) {
-                        echo "<td style=\"background-color:black\"></td>\n";
+                        echo "<td class='black'></td>\n";
                     } else {
-                        echo "<td style=\"background-color:red\"></td>\n";
+                        echo "<td class='red'></td>\n";
                     }
                 }
             }
