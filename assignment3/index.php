@@ -102,6 +102,20 @@
             echo "<tr>\n<td>$restaurant</td>\n<td>$cost</td>\n</tr>\n";
         }
         echo "</table>";
+
+        asort($restaurants);
+        echo "<table>\n<tr>\n<th>Restaurant</th>\n<th>Avg. Cost</th>\n</tr>\n";
+        foreach ($restaurants as $restaurant => $cost) {
+            echo "<tr>\n<td>$restaurant</td>\n<td>$cost</td>\n</tr>\n";
+        }
+        echo "</table>";
+
+        ksort($restaurants);
+        echo "<table>\n<tr>\n<th>Restaurant</th>\n<th>Avg. Cost</th>\n</tr>\n";
+        foreach ($restaurants as $restaurant => $cost) {
+            echo "<tr>\n<td>$restaurant</td>\n<td>$cost</td>\n</tr>\n";
+        }
+        echo "</table>";
     ?>
 </body>
 </html>
