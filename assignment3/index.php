@@ -95,8 +95,13 @@
         $restaurants = array("Chama Gaucha"=>"40.50", "Aviva by Kameel"=>"15.00",
             "Bone's Restaurant"=>"65.00", "Umi Sushi Buckhead"=>"40.50", "Fandangles"=>"30.00",
             "Capital Grill"=>"60.50", "Canoe"=>"35.50", "One Flew South"=>"21.00",
-            "Fox Bros. BBQ"=>"15.00", "South City Kitchen Midtown"=>"29.00")
+            "Fox Bros. BBQ"=>"15.00", "South City Kitchen Midtown"=>"29.00");
 
+        echo "<table>\n<tr>\n<th>Restaurant</th>\n<th>Avg. Cost</th>\n</tr>\n";
+        foreach ($restaurants as $restaurant => $cost) {
+            echo "<tr>\n<td>$restaurant</td>\n<td>$cost</td>\n</tr>\n";
+        }
+        echo "</table>";
     ?>
 </body>
 </html>
