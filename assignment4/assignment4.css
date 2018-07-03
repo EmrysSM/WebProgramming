@@ -1,0 +1,10 @@
+body {
+    text-align: center;
+}
+form {
+    display: inline-block;
+}
+
+.formGroup {
+    padding: 10px;
+}
