@@ -4,6 +4,48 @@
     <meta charset="UTF-8">
     <title>Assignment 4</title>
       <link rel="stylesheet" type="text/css" href="assignment4.css">
+      <style>
+      <?php
+        $bgcolor = $_POST['bgcolor'];
+        $fcolor = $_POST['fcolor'];
+        $italic = $_POST['italic'];
+
+        //get background color
+        function getbgcolor($bg) {
+            if ($bg == "blk") {
+                return "black";
+            } else if ($bg == "wht") {
+                return "white";
+            } else if ($bg == "yel") {
+                return "yellow";
+            } else {
+                return "";
+            }
+        }
+
+        //get font color
+        function getfcolor($f) {
+            if ($f == "blk") {
+                return "black";
+            } else if ($f == "wht") {
+                return "white";
+            } else if ($f == "grn") {
+                return "green";
+            } else {
+                return "";
+            }
+        }
+
+        //get if italic
+        function getitalic($i) {
+            if ($i) {
+                return "italic";
+            } else {
+                return "";
+            }
+        }
+      ?>
+      </style>
   </head>
   <body>
     <form action="index.php">
@@ -28,12 +70,16 @@
             <input type="checkbox" name="italic" value="ital">
         </div>
         <div class="formGroup">
-            <textarea name="tarea" rows="10" cols="30">Enter the text for the page</textarea>
+            <textarea name="tarea" rows="10" cols="30"></textarea>
         </div>
         <input type="submit" value="submit">
     </form>
-    <?php
 
+    <div class="result">
+    <?php
+        $tarea = $_POST['tarea'];
+        echo $tarea;
     ?>
+    </div>
   </body>
 </html>
