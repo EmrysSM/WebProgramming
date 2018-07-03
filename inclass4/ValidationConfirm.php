@@ -11,16 +11,38 @@
     include 'ValidationUtilities.php';
 
     //Retrieve inputs (using helper function)
-    $email = $_GET['email'];
-    $fname = $_GET['fname'];
-    $phone = $_GET['phone'];
-    $state = $_GET['state'];
-    $date = $_GET['']
+    $email = $_POST['email'];
+    $fname = $_POST['fname'];
+    $phone = $_POST['phone'];
+    $state = $_POST['state'];
+    $date = $_POST['birthday'];
+    $age = $_POST['age'];
+    $zip = $_POST['zip'];
 
     //set validation flag
     $IsValid = true;
 
     echo "<p class='centeredNotice'>";
+
+    //Zip code
+    if (!fIsValidZipcode($zip)) {
+        echo "Enter a correct zip code<br>";
+        $isValid = false;
+    }
+
+
+    //age range
+    if (!fIsValidRange($age, 21, 60)) {
+        echo "Invalid age range. [21 - 60]<br>";
+        $IsValid = false;
+    }
+
+    //birthday
+    if (!fIsValidDate($date)) {
+            echo "Invalid birthday<br>";
+            $IsValid = false;
+    }
+
     //email
     if (!fIsValidEmail($email)) {
         echo "Invalid email<br>";
@@ -32,6 +54,8 @@
         $IsValid = false;
     }
 
+
+
     if (!fIsValidPhone($phone)) {
         echo "Enter 10 digit phone number<br>";
         $IsValid = false;
@@ -41,6 +65,7 @@
         echo "Enter 2-character state abbreviation<br>";
         $IsValid = false;
     }
+
 
     echo "</p>";
     if (!$IsValid) {

@@ -10,7 +10,7 @@
          <h2>Form Validation</h2>
          <p>HTML5 and server-side validation</p>
 
-         <form method="post" action="ValidateConfirm.php" autocomplete="on" class="formLayout">
+         <form method="post" action="ValidationConfirm.php" autocomplete="on" class="formLayout">
             <div class="formGroup">
                <label>Email:</label>
                <input type="email" name="email" class="textbox" required placeholder="Email" maxlength="50" autofocus />

@@ -43,7 +43,7 @@ function fIsValidStateAbbr($state) {
 
    //must be 10 digits
   // return ((strlen($phone) == 10) && is_numeric($phone));
-}
+// }
 
 //date
 function fIsValidDate($date) {
@@ -64,5 +64,25 @@ function fIsValidDate($date) {
       return false; //invalid format
    }
 }
+
+function fIsValidRange($value, $min, $max) {
+    $value = trim($value);
+    if (is_numeric($value)) {
+        $IsValid = ($value >= $min && $value <= $max);
+    } else {
+        $IsValid = false;
+    }
+    return $IsValid;
+}
+
+
+function fIsValidZipcode($zip) {
+    if (is_numeric($zip) && (strlen($zip) == 5)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 ?>
 
