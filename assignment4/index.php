@@ -6,9 +6,9 @@
       <link rel="stylesheet" type="text/css" href="assignment4.css">
       <style>
       <?php
-        $bgcolor = $_POST['bgcolor'];
-        $fcolor = $_POST['fcolor'];
-        $italic = $_POST['italic'];
+        $bgcolor = $_GET['bgcolor'];
+        $fcolor = $_GET['fcolor'];
+        $italic = $_GET['italic'];
 
         //get background color
         function getbgcolor($bg) {
@@ -44,10 +44,13 @@
                 return "";
             }
         }
+
+        echo ".result { background-color:".getbgcolor($bgcolor)."; color:".getfcolor($fcolor)."; font-style:".getitalic($italic)."; }"
       ?>
       </style>
   </head>
   <body>
+  <h1>Part 1</h1>
     <form action="index.php">
         <div class="formGroup">
             <label>Select a Background Color:</label>
@@ -77,8 +80,7 @@
 
     <div class="result">
     <?php
-        $tarea = $_POST['tarea'];
-        echo $tarea;
+        echo $_GET['tarea'];
     ?>
     </div>
   </body>

@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+}
+
+table {
+    display: inline-block;
+}
+
+table, td, th {
+    border: 3px solid black;
+}
