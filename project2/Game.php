@@ -6,7 +6,7 @@
 <p>
 
     <?php
-
+    session_start();
     //include('Player.php');
     include('Card.php');
     //include('ArrayList.php');
@@ -321,40 +321,6 @@
     echo "<br />";
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // -------------------------------------------------------------------------------------------------------------------
 
     $g->draw($deck_activePlayer, $hand_activePlayer, $deck_activePlayer->get($index_activePlayer));
@@ -377,7 +343,31 @@
 
 
     ?>
+    <form method="post" action="" >
+        <input type="submit" name="turn" id="turn" value="NEXT TURN">
+        <br />
+        <input type="submit" name="reset" id="turn" value="RESET">
+        <br />
+        <input type="submit" name="reset_session" id="turn" value="RESET SESSION">
+    </form>
 
+    <?php
+    print_r($_POST);
+    echo "<br />";
+    ?>
+    </body>
+    </html>
+
+    <?php
+
+    if(array_key_exists('reset',$_POST)){
+        $_POST = array();
+    }
+
+    if(array_key_exists('reset_session', $_POST)){
+        $_SESSION = array();
+    }
+    ?>
 </p>
 </body>
 </html>
