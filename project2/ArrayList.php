@@ -10,6 +10,8 @@ class ArrayList
         array_push($this->list, $obj);
     }
 
+
+
     public function Remove($key)
     {
         if (array_key_exists($key, $this->list)) {
