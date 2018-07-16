@@ -3,12 +3,10 @@
     <title> Game test </title>
 </head>
 <body>
-<p>
-
     <?php
-    session_start();
+
     //include('Player.php');
-    include('Card.php');
+//    include('Card.php');
     //include('ArrayList.php');
 
     require('Player.php');
@@ -16,15 +14,6 @@
 
 
     class Game{
-
-//    public function drawStartingHand($g){
-//        for ($i = 0; $i <= 3; $i++) {
-//            $g->draw();
-//            $this->index++;
-//        }
-//
-//    }
-
         public $player;
 
 
@@ -73,9 +62,6 @@
             }
         }
 
-//        public function play($){
-//
-//        }
 
         public function getWInner($cardPlayed_activePlayer, $cardPlayed_opponent, $activePlayer, $opponent){
             $this->activePlayer = $activePlayer;
@@ -83,108 +69,346 @@
             if ($cardPlayed_activePlayer > $cardPlayed_opponent){
                 $difference = $cardPlayed_activePlayer-$cardPlayed_opponent;
                 echo "<h3> Active Player wins and deals " .$difference ." to opponent</h3>";
-                $opponent->receiveDamage($difference);
+                $_SESSION['opponent']->receiveDamage($difference);
             } else {
                 $difference = $cardPlayed_opponent-$cardPlayed_activePlayer;
-                $activePlayer->receiveDamage($difference);
+                $_SESSION['activePlayer']->receiveDamage($difference);
                 echo "<h3> Opponent wins and deals " .$difference." to Active player</h3>";
             }
         }
 
     }
 
+    session_start();
 
 
-    $activePlayer = new Player(20, 0);
-    $opponent = new Player(20,0);
+//    $activePlayer = new Player(20, 0);
+//    $opponent = new Player(20,0);
+//
+//    $manaSlotsActivePlayer = 0;
+//    $manaSlotsOpponent = 0;
 
-    $manaSlotsActivePlayer = 0;
-    $manaSlotsOpponent = 0;
-
-    $coinToss = rand(0,1);
-
-    $coinToss == 1 ? $activePlayer->setIsStarting(true) : $opponent->setIsStarting(true);
-    echo $coinToss == 1 ? "<h3>Active player is starting<h3></h3>" : "<h3>Opponent is starting</h3>";
+//    $coinToss = rand(0,1);
+//
+//    $coinToss == 1 ? $activePlayer->setIsStarting(true) : $opponent->setIsStarting(true);
+//    echo $coinToss == 1 ? "<h3>Active player is starting<h3></h3>" : "<h3>Opponent is starting</h3>";
 
     $g = new Game;
 
     //----------------------------------------------------------------------------------------------------------------------
 
-    $deck_activePlayer = new ArrayList();
+//    $deck_activePlayer = new ArrayList();
+//
+//    $g->buildDeck($deck_activePlayer);
+//    $deck_activePlayer->shuffle();
+//
+//    $_SESSION['deck_activePlayer'] = $deck_activePlayer;
 
-    $g->buildDeck($deck_activePlayer);
-    $deck_activePlayer->shuffle();
+//    $hand_activePlayer = new ArrayList();
+//
+//
+//
+//    $index_activePlayer = 0;
+//
+//    $g->draw($deck_activePlayer, $hand_activePlayer, $deck_activePlayer->get($index_activePlayer));
+//    $deck_activePlayer->remove($index_activePlayer);
+//    $index_activePlayer++;
+//
+//    $g->draw($deck_activePlayer, $hand_activePlayer, $deck_activePlayer->get($index_activePlayer));
+//    $deck_activePlayer->remove($index_activePlayer);
+//    $index_activePlayer++;
+//
+//    $g->draw($deck_activePlayer, $hand_activePlayer, $deck_activePlayer->get($index_activePlayer));
+//    $deck_activePlayer->remove($index_activePlayer);
+//    $index_activePlayer++;
+//
+//
+//
+//    // ---------------------------------------------------------------------------------------------------------------------//
+//
+//    $deck_opponent = new ArrayList();
+//
+//    $g->buildDeck($deck_opponent);
+//    $deck_opponent->shuffle();
+//
+//
+//    $hand_opponent = new ArrayList();
+//
+//
+//
+//    $index_opponent = 0;
+//
+//    $g->draw($deck_opponent, $hand_opponent, $deck_opponent->get($index_opponent));
+//    $deck_opponent->remove($index_opponent);
+//    $index_opponent++;
+//
+//    $g->draw($deck_opponent, $hand_opponent, $deck_opponent->get($index_opponent));
+//    $deck_opponent->remove($index_opponent);
+//    $index_opponent++;
+//
+//    $g->draw($deck_opponent, $hand_opponent, $deck_opponent->get($index_opponent));
+//    $deck_opponent->remove($index_opponent);
+//    $index_opponent++;
+//
+//    // ---------------------------------------------------------------------------------------------------------------------
+//
+//    $g->beginTurn($activePlayer);
+//    echo "<br />";
+//    echo "<br />";
 
-    $hand_activePlayer = new ArrayList();
+//    echo "Active player : ";
+//    echo "<br />";
+//    echo "Current mana: " .$activePlayer->getMana();
+//    echo "<br >";
+//    echo "Current health: " .$activePlayer->getHealth();
+//
+//    echo "<br />";
+//
+//    $canPlayCard = $g->canPlay($hand_activePlayer, $activePlayer->getMana());
+//
+//    if ($canPlayCard == true){
+//        $card = $g->getPlayableCard($hand_activePlayer, $activePlayer->getMana());
+//        echo "Playing card: " .$card;
+//        $cardPlayed_activePlayer=$card;
+//        echo "<br />";
+//        $key = array_search($card, $hand_activePlayer->toArray());
+//        $hand_activePlayer->remove($key);
+//    } else{
+//        $cardPlayed_activePlayer = -1;
+//    }
+//    echo "<br />";
+//
+//
+//
+////------------------------------------------------------------------------------------------------------------------------
+//
+//    $g->beginTurn($opponent);
+//
+//    echo "Opponent : ";
+//    echo "<br />";
+//    echo "Current mana: " .$opponent->getMana();
+//    echo "<br >";
+//    echo "Current health: " .$opponent->getHealth();
+//
+//    echo "<br />";
+//
+//
+//    $canPlayCard = $g->canPlay($hand_opponent, $opponent->getMana());
+//
+//    if ($canPlayCard == true){
+//        $card = $g->getPlayableCard($hand_opponent, $opponent->getMana());
+//        echo "Playing card: " .$card;
+//        $cardPlayed_opponent=$card;
+//        echo "<br />";
+//        $key = array_search($card, $hand_opponent->toArray());
+//        $hand_opponent->remove($key);
+//    } else{
+//        $cardPlayed_opponent= 0;
+//
+//    }
+//
+//
+// //---------------------------------------------------------------------------------------------------------------------
+//    echo "<br />";
+//    echo "<br />";
+//
+////    if ($cardPlayed_activePlayer == $cardPlayed_opponent){
+////        echo "<h1> DRAW </h1>";
+////    } else {
+////        echo $cardPlayed_activePlayer > $cardPlayed_opponent ? "<h1>ACTIVE PLAYER WINS</h1>" : "<h1>OPPONENT WINS</h1>" ;
+////    }
+//
+//    if ($cardPlayed_activePlayer > $cardPlayed_opponent){
+//        $difference = $cardPlayed_activePlayer-$cardPlayed_opponent;
+//        echo "<h3> Active Player wins and deals " .$difference ." to opponent</h3>";
+//        $opponent->receiveDamage($difference);
+//    } else {
+//        $difference = $cardPlayed_opponent-$cardPlayed_activePlayer;
+//        $activePlayer->receiveDamage($difference);
+//        echo "<h3> Opponent wins and deals " .$difference." to Active player</h3>";
+//    }
+//    echo "<br />";
+//    echo "<br />";
+//
+//    //--------------------------------------------------------------------------------------------------------------------
+//
+//    $g->draw($deck_activePlayer, $hand_activePlayer, $deck_activePlayer->get($index_activePlayer));
+//    $deck_activePlayer->remove($index_activePlayer);
+//    $index_activePlayer++;
+//
+//    $g->beginTurn($activePlayer);
+//    echo "<br />";
+//    echo "<br />";
+//    echo "Active player : ";
+//    echo "<br />";
+//    echo "Current mana: " .$activePlayer->getMana();
+//    echo "<br >";
+//    echo "Current health: " .$activePlayer->getHealth();
+//
+//    echo "<br />";
+//
+//    $canPlayCard = $g->canPlay($hand_activePlayer, $activePlayer->getMana());
+//
+//    if ($canPlayCard == true){
+//        $card = $g->getPlayableCard($hand_activePlayer, $activePlayer->getMana());
+//        echo "Playing card: " .$card;
+//        $cardPlayed_activePlayer=$card;
+//        echo "<br />";
+//        $key = array_search($card, $hand_activePlayer->toArray());
+//        $hand_activePlayer->remove($key);
+//    } else{
+//        $cardPlayed_activePlayer = 0;
+//    }
+//    echo "<br />";
+//
+//    //-------------------------------------------------------------------------------------------------------------------
+//    $g->draw($deck_opponent, $hand_opponent, $deck_opponent->get($index_opponent));
+//    $deck_opponent->remove($index_opponent);
+//    $index_opponent++;
+//
+//    $g->beginTurn($opponent);
+//
+//    echo "Opponent : ";
+//    echo "<br />";
+//    echo "Current mana: " .$opponent->getMana();
+//    echo "<br >";
+//    echo "Current health: " .$opponent->getHealth();
+//
+//    echo "<br />";
+//
+//
+//    $canPlayCard = $g->canPlay($hand_opponent, $opponent->getMana());
+//
+//    if ($canPlayCard == true){
+//        $card = $g->getPlayableCard($hand_opponent, $opponent->getMana());
+//        echo "Playing card: " .$card;
+//        $cardPlayed_opponent=$card;
+//        echo "<br />";
+//        $key = array_search($card, $hand_opponent->toArray());
+//        $hand_opponent->remove($key);
+//    } else{
+//        $cardPlayed_opponent= 0;
+//
+//    }
+//
+//    //---------------------------------------------------------------------------------------------------------------------
+//    echo "<br />";
+//    echo "<br />";
+//
+//
+//
+//    if ($cardPlayed_activePlayer > $cardPlayed_opponent){
+//        $difference = $cardPlayed_activePlayer-$cardPlayed_opponent;
+//        echo "<h3> Active Player wins and deals " .$difference ." to opponent</h3>";
+//        $opponent->receiveDamage($difference);
+//    } else {
+//        $difference = $cardPlayed_opponent-$cardPlayed_activePlayer;
+//        $activePlayer->receiveDamage($difference);
+//        echo "<h3> Opponent wins and deals " .$difference." to Active player</h3>";
+//    }
+//
+//    echo "<br />";
+//    echo "<br />";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//    // -------------------------------------------------------------------------------------------------------------------
+//
+//    $g->draw($deck_activePlayer, $hand_activePlayer, $deck_activePlayer->get($index_activePlayer));
+//    $deck_activePlayer->remove($index_activePlayer);
+//    $index_activePlayer++;
+//
+//    $g->beginTurn($activePlayer);
+//
+//
+//    $canPlayCard = $g->canPlay($hand_activePlayer, $activePlayer->getMana());
+//
+//    if ($canPlayCard == true){
+//        $card = $g->getPlayableCard($hand_activePlayer, $activePlayer->getMana());
+//        $cardPlayed_activePlayer=$card;
+//        $key = array_search($card, $hand_activePlayer->toArray());
+//        $hand_activePlayer->remove($key);
+//    } else{
+//        $cardPlayed_activePlayer = 0;
+//    }
 
 
+    ?>
 
-    $index_activePlayer = 0;
-
-    $g->draw($deck_activePlayer, $hand_activePlayer, $deck_activePlayer->get($index_activePlayer));
-    $deck_activePlayer->remove($index_activePlayer);
-    $index_activePlayer++;
-
-    $g->draw($deck_activePlayer, $hand_activePlayer, $deck_activePlayer->get($index_activePlayer));
-    $deck_activePlayer->remove($index_activePlayer);
-    $index_activePlayer++;
-
-    $g->draw($deck_activePlayer, $hand_activePlayer, $deck_activePlayer->get($index_activePlayer));
-    $deck_activePlayer->remove($index_activePlayer);
-    $index_activePlayer++;
-
+<form method="post" action="" >
+    <input type="submit" name="turn" id="turn" value="NEXT TURN">
+    <br />
+    <input type="submit" name="new_game" id="new_game" value="NEW GAME">
+    <br />
+    <input type="submit" name="reset" id="turn" value="RESET">
+    <br />
+    <input type="submit" name="reset_session" id="turn" value="RESET SESSION">
+    <br />
+    <input type="submit" name="play" id="play" value="play">
+</form>
 
 
-    // ---------------------------------------------------------------------------------------------------------------------//
+</body>
+</html>
 
-    $deck_opponent = new ArrayList();
+<?php
 
-    $g->buildDeck($deck_opponent);
-    $deck_opponent->shuffle();
-
-
-    $hand_opponent = new ArrayList();
-
-
-
-    $index_opponent = 0;
-
-    $g->draw($deck_opponent, $hand_opponent, $deck_opponent->get($index_opponent));
-    $deck_opponent->remove($index_opponent);
-    $index_opponent++;
-
-    $g->draw($deck_opponent, $hand_opponent, $deck_opponent->get($index_opponent));
-    $deck_opponent->remove($index_opponent);
-    $index_opponent++;
-
-    $g->draw($deck_opponent, $hand_opponent, $deck_opponent->get($index_opponent));
-    $deck_opponent->remove($index_opponent);
-    $index_opponent++;
-
-    // ---------------------------------------------------------------------------------------------------------------------
-
-    $g->beginTurn($activePlayer);
+if(array_key_exists('play',$_POST)){
     echo "<br />";
     echo "<br />";
+
     echo "Active player : ";
     echo "<br />";
-    echo "Current mana: " .$activePlayer->getMana();
+    echo "Current mana: " .$_SESSION['activePlayer']->getMana();
     echo "<br >";
-    echo "Current health: " .$activePlayer->getHealth();
+    echo "Current health: " .$_SESSION['activePlayer']->getHealth();
 
     echo "<br />";
 
-    $canPlayCard = $g->canPlay($hand_activePlayer, $activePlayer->getMana());
+    $canPlayCard = $g->canPlay($_SESSION['hand_activePlayer'], $_SESSION['activePlayer']->getMana());
 
     if ($canPlayCard == true){
-        $card = $g->getPlayableCard($hand_activePlayer, $activePlayer->getMana());
+        $card = $g->getPlayableCard($_SESSION['hand_activePlayer'], $_SESSION['activePlayer']->getMana());
         echo "Playing card: " .$card;
         $cardPlayed_activePlayer=$card;
         echo "<br />";
-        $key = array_search($card, $hand_activePlayer->toArray());
-        $hand_activePlayer->remove($key);
+        $key = array_search($card, $_SESSION['hand_activePlayer']->toArray());
+        $_SESSION['hand_activePlayer']->remove($key);
     } else{
-        $cardPlayed_activePlayer = -1;
+        $cardPlayed_activePlayer = 0;
     }
     echo "<br />";
 
@@ -192,27 +416,25 @@
 
 //------------------------------------------------------------------------------------------------------------------------
 
-    $g->beginTurn($opponent);
-
     echo "Opponent : ";
     echo "<br />";
-    echo "Current mana: " .$opponent->getMana();
+    echo "Current mana: " .$_SESSION['opponent']->getMana();
     echo "<br >";
-    echo "Current health: " .$opponent->getHealth();
+    echo "Current health: " .$_SESSION['opponent']->getHealth();
 
     echo "<br />";
 
 
-    $canPlayCard = $g->canPlay($hand_opponent, $opponent->getMana());
+    $canPlayCard = $g->canPlay($_SESSION['hand_opponent'], $_SESSION['opponent']->getMana());
 
     if ($canPlayCard == true){
-        $card = $g->getPlayableCard($hand_opponent, $opponent->getMana());
+        $card = $g->getPlayableCard($_SESSION['hand_opponent'], $_SESSION['opponent']->getMana());
         echo "Playing card: " .$card;
         $cardPlayed_opponent=$card;
         echo "<br />";
-        $key = array_search($card, $hand_opponent->toArray());
-        $hand_opponent->remove($key);
-    } else{
+        $key = array_search($card, $_SESSION['hand_opponent']->toArray());
+        $_SESSION['hand_opponent']->remove($key);
+    } else {
         $cardPlayed_opponent= 0;
 
     }
@@ -220,157 +442,114 @@
 
  //---------------------------------------------------------------------------------------------------------------------
     echo "<br />";
+    echo "card played active player: ".$cardPlayed_activePlayer."<br>";
+    echo "card played opponent: ".$cardPlayed_opponent."<br>";
     echo "<br />";
 
-//    if ($cardPlayed_activePlayer == $cardPlayed_opponent){
-//        echo "<h1> DRAW </h1>";
-//    } else {
-//        echo $cardPlayed_activePlayer > $cardPlayed_opponent ? "<h1>ACTIVE PLAYER WINS</h1>" : "<h1>OPPONENT WINS</h1>" ;
-//    }
-
-    if ($cardPlayed_activePlayer > $cardPlayed_opponent){
-        $difference = $cardPlayed_activePlayer-$cardPlayed_opponent;
-        echo "<h3> Active Player wins and deals " .$difference ." to opponent</h3>";
-        $opponent->receiveDamage($difference);
-    } else {
-        $difference = $cardPlayed_opponent-$cardPlayed_activePlayer;
-        $activePlayer->receiveDamage($difference);
-        echo "<h3> Opponent wins and deals " .$difference." to Active player</h3>";
+    $g->getWInner($cardPlayed_activePlayer, $cardPlayed_opponent, $_SESSION['activePlayer'], $_SESSION['opponent']);
     }
     echo "<br />";
     echo "<br />";
 
-    //--------------------------------------------------------------------------------------------------------------------
-
-    $g->draw($deck_activePlayer, $hand_activePlayer, $deck_activePlayer->get($index_activePlayer));
-    $deck_activePlayer->remove($index_activePlayer);
-    $index_activePlayer++;
-
-    $g->beginTurn($activePlayer);
-    echo "<br />";
-    echo "<br />";
-    echo "Active player : ";
-    echo "<br />";
-    echo "Current mana: " .$activePlayer->getMana();
-    echo "<br >";
-    echo "Current health: " .$activePlayer->getHealth();
-
-    echo "<br />";
-
-    $canPlayCard = $g->canPlay($hand_activePlayer, $activePlayer->getMana());
-
-    if ($canPlayCard == true){
-        $card = $g->getPlayableCard($hand_activePlayer, $activePlayer->getMana());
-        echo "Playing card: " .$card;
-        $cardPlayed_activePlayer=$card;
-        echo "<br />";
-        $key = array_search($card, $hand_activePlayer->toArray());
-        $hand_activePlayer->remove($key);
-    } else{
-        $cardPlayed_activePlayer = 0;
-    }
-    echo "<br />";
-
-    //-------------------------------------------------------------------------------------------------------------------
-    $g->draw($deck_opponent, $hand_opponent, $deck_opponent->get($index_opponent));
-    $deck_opponent->remove($index_opponent);
-    $index_opponent++;
-
-    $g->beginTurn($opponent);
-
-    echo "Opponent : ";
-    echo "<br />";
-    echo "Current mana: " .$opponent->getMana();
-    echo "<br >";
-    echo "Current health: " .$opponent->getHealth();
-
-    echo "<br />";
 
 
-    $canPlayCard = $g->canPlay($hand_opponent, $opponent->getMana());
+if(array_key_exists('reset',$_POST)){
+    $_POST = array();
+}
 
-    if ($canPlayCard == true){
-        $card = $g->getPlayableCard($hand_opponent, $opponent->getMana());
-        echo "Playing card: " .$card;
-        $cardPlayed_opponent=$card;
-        echo "<br />";
-        $key = array_search($card, $hand_opponent->toArray());
-        $hand_opponent->remove($key);
-    } else{
-        $cardPlayed_opponent= 0;
+if(array_key_exists('reset_session', $_POST)){
+    $_SESSION = array();
+}
 
-    }
+if(array_key_exists('new_game', $_POST)){
 
-    //---------------------------------------------------------------------------------------------------------------------
-    echo "<br />";
-    echo "<br />";
+    $activePlayer = new Player(20, 0);
+    $opponent = new Player(20,0);
 
+    $_SESSION['activePlayer'] = $activePlayer;
+    $_SESSION['opponent'] = $opponent;
 
+    $manaSlotsActivePlayer = 0;
+    $manaSlotsOpponent = 0;
 
-    if ($cardPlayed_activePlayer > $cardPlayed_opponent){
-        $difference = $cardPlayed_activePlayer-$cardPlayed_opponent;
-        echo "<h3> Active Player wins and deals " .$difference ." to opponent</h3>";
-        $opponent->receiveDamage($difference);
-    } else {
-        $difference = $cardPlayed_opponent-$cardPlayed_activePlayer;
-        $activePlayer->receiveDamage($difference);
-        echo "<h3> Opponent wins and deals " .$difference." to Active player</h3>";
-    }
+    $_SESSION['manaSlotsActivePlayer'] = $manaSlotsActivePlayer;
+    $_SESSION['manaSlotsOpponent'] = $manaSlotsOpponent;
 
-    echo "<br />";
-    echo "<br />";
+    $deck_activePlayer = new ArrayList();
+    $deck_opponent = new ArrayList();
 
+    $g->buildDeck($deck_activePlayer);
+    $g->buildDeck($deck_opponent);
 
-    // -------------------------------------------------------------------------------------------------------------------
+    $deck_activePlayer->shuffle();
+    $deck_opponent->shuffle();
 
-    $g->draw($deck_activePlayer, $hand_activePlayer, $deck_activePlayer->get($index_activePlayer));
-    $deck_activePlayer->remove($index_activePlayer);
-    $index_activePlayer++;
+    $_SESSION['deck_activePlayer'] = $deck_activePlayer;
+    $_SESSION['deck_opponent'] = $deck_opponent;
 
-    $g->beginTurn($activePlayer);
+    $index_activePlayer = 0;
+    $index_opponent = 0;
 
+    $_SESSION['index_activePlayer'] = $index_activePlayer;
+    $_SESSION['index_opponent'] = $index_opponent;
 
-    $canPlayCard = $g->canPlay($hand_activePlayer, $activePlayer->getMana());
+    $hand_activePlayer = new ArrayList();
+    $hand_opponent = new ArrayList();
 
-    if ($canPlayCard == true){
-        $card = $g->getPlayableCard($hand_activePlayer, $activePlayer->getMana());
-        $cardPlayed_activePlayer=$card;
-        $key = array_search($card, $hand_activePlayer->toArray());
-        $hand_activePlayer->remove($key);
-    } else{
-        $cardPlayed_activePlayer = 0;
-    }
+    $_SESSION['hand_activePlayer'] = $hand_activePlayer;
+    $_SESSION['hand_opponent'] = $hand_opponent;
+
+    echo "active player deck: ";
+    echo "<br>";
+    $g->printDeck($deck_activePlayer);
+//    print_r($_SESSION['deck_activePlayer']);
 
 
-    ?>
-    <form method="post" action="" >
-        <input type="submit" name="turn" id="turn" value="NEXT TURN">
-        <br />
-        <input type="submit" name="reset" id="turn" value="RESET">
-        <br />
-        <input type="submit" name="reset_session" id="turn" value="RESET SESSION">
-    </form>
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
 
-    <?php
-    print_r($_POST);
-    echo "<br />";
-    ?>
-    </body>
-    </html>
+    echo "opponent deck: ";
+    echo "<br>";
+    $g->printDeck($deck_opponent);
 
-    <?php
 
-    if(array_key_exists('reset',$_POST)){
-        $_POST = array();
-    }
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+//    var_dump($_SESSION);
 
-    if(array_key_exists('reset_session', $_POST)){
-        $_SESSION = array();
-    }
-    ?>
-</p>
-</body>
-</html>
+
+
+
+
+
+
+//        $g->printDeck($_SESSION['deck_activePlayer']);
+}
+
+
+if(array_key_exists('turn',$_POST)){
+    $g->beginTurn($_SESSION['activePlayer']);
+    $g->beginTurn($_SESSION['opponent']);
+
+    echo "<br>";
+    echo "active player hand:";
+    echo "<br>";
+
+    $g->draw($_SESSION['deck_activePlayer'], $_SESSION['hand_activePlayer'], $_SESSION['deck_activePlayer']->get($_SESSION['index_activePlayer']));
+    $_SESSION['deck_activePlayer']->remove($_SESSION['index_activePlayer']);
+    $_SESSION['index_activePlayer']++;
+
+    echo "<br>";
+    echo "<br>";
+//    print_r($_SESSION['deck_activePlayer']);
+//    $g->printDeck($_SESSION['deck_activePlayer']);
+
+
+}
+
+?>
 
 
 

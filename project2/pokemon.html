@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  <style>
+  #opponent{
+      border: 5px solid black;
+      padding: 5px;
+      width: 40%;
+  }
+  #user{
+      border: 5px solid black;
+      padding: 15px;
+      width: 40%;
+      float: right;
+      margin-top: 100px;
+     
+  }
+  .card_1{
+    border: 2px solid black;
+    position: absolute;
+    top: 320px;
+    padding-left: 30px;
+    padding-right:70px;
+    padding-top:50px;
+    padding-bottom:50px;
+    width: 1%;
+    float: right;
+    font-size: 72pt;
+    
+   
+    }
+    .card_2{
+    border: 2px solid black;
+    position: absolute;
+    top: 320px;
+    left: 150px;
+    padding-left: 30px;
+    padding-right:70px;
+    padding-top:50px;
+    padding-bottom:50px;
+    width: 1%;
+    float: right;
+    font-size: 72pt;
+    }
+    .card_3{
+    border: 2px solid black;
+    position: absolute;
+    top: 320px;
+    left: 300px;
+    padding-left: 30px;
+    padding-right:70px;
+    padding-top:50px;
+    padding-bottom:50px;
+    width: 1%;
+    float: right;
+    font-size: 72pt;
+    }
+    .card_4{
+    border: 2px solid black;
+    position: absolute;
+    top: 320px;
+    left: 450px;
+    padding-left: 30px;
+    padding-right:70px;
+    padding-top:50px;
+    padding-bottom:50px;
+    width: 1%;
+    float: right;
+    font-size: 72pt;
+    }
+    .card_5{
+    border: 2px solid black;
+    position: absolute;
+    top: 320px;
+    left: 600px;
+    padding-left: 30px;
+    padding-right:70px;
+    padding-top:50px;
+    padding-bottom:50px;
+    width: 1%;
+    float: right;
+    font-size: 72pt;
+    }
+    .card_6{
+    border: 2px solid black;
+    position: absolute;
+    top: 320px;
+    left: 750px;
+    padding-left: 30px;
+    padding-right:70px;
+    padding-top:50px;
+    padding-bottom:50px;
+    width: 1%;
+    float: right;
+    font-size: 72pt;
+    }
+    .card_7{
+    border: 2px solid black;
+    position: absolute;
+    top: 320px;
+    left: 900px;
+    padding-left: 30px;
+    padding-right:70px;
+    padding-top:50px;
+    padding-bottom:50px;
+    
+    width: 1%;
+    float: right;
+    font-size: 72pt;
+    }
+    .card_8{
+    border: 2px solid black;
+    position: absolute;
+    top: 320px;
+    left: 1050px;
+    padding-left: 30px;
+    padding-right:70px;
+    padding-top:50px;
+    padding-bottom:50px;
+    width: 1%;
+    float: right;
+    font-size: 72pt;
+    }
+    #op_damage{
+      color: red;
+     position: absolute;
+      margin-left: 350px;
+      font-size: 60pt;
+     top:05px;
+    }
+    #damage{
+      color: red;
+     position: absolute;
+     right: 50px;
+     top: 200px;
+      font-size: 60pt;
+     
+    }
+    #user_card{
+      position: absolute;
+      top: 175px;
+      left: 540px;
+      font-size: 140px;
+      color: green;
+      opacity: 1;
+    transition: opacity 2s linear;
+    }
+    #opponent_card{
+      position: absolute;
+      top: 01px;
+      right: 560px;
+      font-size: 140px;
+      color: blue;
+      opacity: 1;
+    transition: opacity 2s linear;
+    }
+    
+    #vs{
+      float: right;
+      position: absolute;
+      top: 140px;
+      left: 550px;
+      opacity: 1;
+      transition: opacity 2s linear;
+    }
+    
+</style>
+    <meta charset="UTF-8">
+    <title>title</title>
+  </head>
+<body>
+<?
+  <div id = "vs">
+
+  
+  <img src="versus.png" alt="VS" style="width: 10%; height: 10%">
+</div>
+<div id = "user_card">
+5
+</div>
+
+
+<div id = "opponent_card">
+
+3
+
+</div>
+
+  
+
+
+
+
+  <div id = "opponent">
+ <table>
+    <tr>
+        <td>Name:</td>
+      </tr>
+        <tr>
+          <td>Current HP:</td>
+        </tr>
+        <tr>
+          <td>Current Mana:</td>
+        </tr>
+      </table>
+<div id = "op_damage">
+  -2
+</div>
+
+</div>
+      <div id = "user">
+      <table>
+          <tr>
+              <td>Name:</td>
+            </tr>
+          <tr>
+            <td>Current HP:</td>
+          </tr>
+          <tr>
+            <td>Current Mana:</td>
+          </tr>
+        </table>
+        <div id = "damage">
+          -2
+        </div>
+      </div>
+      <div id = "cards">
+
+          for(hand array){
+      <div class = "card_1">
+        2 value of that key
+          blank if key not there
+      </div>
+          }
+      <div class = "card_2">
+          5
+       </div>
+       <div class = "card_3">
+          3
+       </div>
+       <div class = "card_4">
+          5
+       </div>
+       <div class = "card_5">
+          1
+       </div>
+       <div class = "card_6">
+          8
+       </div>
+       <div class = "card_7">
+          2
+       </div>
+       <div class = "card_8">
+          3
+       </div>
+      </div>
+
+      
+
+    </body>
+    </html>
