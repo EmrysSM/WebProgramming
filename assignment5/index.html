@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 5 A</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Enter Payroll Info</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Enter Employee info. Enter a negative number for the hours to exit.</p>
+        <form>
+            Hours: <input type="number" name="hours" id="hours"><br>
+            <input type="button" onclick="" value="Submit" id="submitBtn">
+        </form>
+    </div>
+
+</div>
+
+<table id="result">
+    <tr>
+        <th>Index</th>
+        <th>Hours</th>
+        <th>Pay</th>
+    </tr>
+</table>
+<div id="total"></div>
+<a href="b.html">Part B</a>
+<script src="main.js"></script>
+</body>
+</html>
