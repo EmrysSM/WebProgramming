@@ -1,0 +1,27 @@
+<!DOCTYPE html lang="en">
+<html>
+   <head>
+      <style = "text/css">
+      span{color: red;}
+      </style>
+      <meta charset="UTF-8">
+      <title>Quiz 3</title>
+   </head>
+   <body>
+      <form name="myForm" action="" >
+         <span id="id-warning"></span>
+         ID: <input autocomplete="off" type="text" name="id">
+         <br />
+         <span id="fname-warning"></span>
+         First Name: <input autocomplete="off" type="text" name="fname">
+         <br />
+         <span id="lname-warning"></span>
+         Last Name: <input autocomplete="off" type="text" name="lname">
+         <br />
+         <br />
+         <button type="button" onclick="validateForm()">ADD</button>
+      </form>
+      <div id="user-info"></div>
+      <script src="quiz.js"></script>
+   </body>
+</html>

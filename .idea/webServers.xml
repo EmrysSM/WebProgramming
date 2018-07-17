@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="059f35f5-856e-488e-9474-a4e2477c15e9" name="emrys codd" url="http://codd.cs.gsu.edu">
+        <fileTransfer host="codd.cs.gsu.edu" port="22" rootFolder="/home/escottmurrell1/public_html" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
